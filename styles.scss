@@ -6,7 +6,12 @@
 
 @font-face {
   font-family: 'Anton';
-  src: url('../public/Anton-Regular.ttf');
+  src: url('./public/Anton-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'AaSong';
+  src: url('./public/AaGuDianKeBenSong-2.ttf');
 }
 
 @keyframes earthRotate {
@@ -28,6 +33,61 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  // 主要内容
+  .content {
+    padding: 20px;
+    width: 100vw;
+    height: 100vh;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(65, 65, 65, 0.308);
+    border: 1px solid rgba(255, 255, 255, 0.089);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      width: 280px;
+      height: 280px;
+      position: absolute;
+      left: -10px;
+      top: -10px;
+      z-index: -1;
+      background-color: rgba($color: #6ad27d, $alpha: 0.3);
+      box-shadow: 0 0 80px 80px rgba($color: #6ad27d, $alpha: 0.3);
+      border-radius: 50%;
+      transition: all ease-in-out 1s;
+    }
+
+    // &:hover::before {
+    //   transform: translate(700px, 350px);
+    //   width: 40px;
+    //   height: 40px;
+    //   opacity: 0;
+    // }
+
+    &::after {
+      content: '';
+      width: 140px;
+      height: 140px;
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      z-index: -1;
+      background-color: rgba($color: #6ad27d, $alpha: 0.2);
+      box-shadow: 0 0 80px 80px rgba($color: #6ad27d, $alpha: 0.2);
+      border-radius: 50%;
+      transition: all 1s;
+    }
+
+    // &:hover::after {
+    //   transform: translate(-700px, -350px);
+    //   width: 40px;
+    //   height: 40px;
+    //   opacity: 0;
+    // }
+  }
 
   // 背景
   .background {
@@ -51,87 +111,16 @@ body {
       150px 0px 38px #000000aa inset;
     opacity: 0.5;
   }
-
-  // 主要内容
-  .content {
-    width: 90vw;
-    height: 90vh;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    background-color: rgba(65, 65, 65, 0.308);
-    border: 1px solid rgba(255, 255, 255, 0.089);
-    position: relative;
-    overflow: hidden;
-
-    &::before {
-      content: '';
-      width: 100px;
-      height: 100px;
-      position: absolute;
-      left: 100px;
-      top: 50px;
-      z-index: -1;
-      background-color: rgba($color: #6ad27d, $alpha: 0.4);
-      box-shadow: 0 0 80px 80px rgba($color: #6ad27d, $alpha: 0.4);
-      border-radius: 50%;
-      transition: all 1s;
-    }
-
-    &:hover::before {
-      transform: translate(-50px, 50px);
-    }
-
-    .main {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: fit-content;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-      color: #fff;
-
-      .line-flex {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        font-family: 'Anton';
-        font-size: 30px;
-
-        .avatar {
-          width: 60px;
-          height: 60px;
-          border-radius: 50%;
-        }
-      }
-
-      .links {
-        span:nth-child(odd) {
-          text-decoration-style: dashed;
-          text-decoration-line: underline;
-          text-underline-offset: 3px;
-          transition: all ease 0.2s;
-          cursor: pointer;
-
-          &:hover {
-            color: #646cff;
-          }
-        }
-      }
-    }
-  }
 }
 
+// info-card
 .info_card {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 450px;
-  height: 180px;
+  height: 450px;
   perspective: 1000px;
 
   &:hover {
@@ -141,9 +130,14 @@ body {
         rgba(5, 71, 17, 0.3) 30px 50px 25px -40px,
         rgba(5, 71, 17, 0.1) 0px 25px 30px 0px;
 
-      .bottom .social-buttons-container .social-button {
+      .bottom .social-buttons-container button {
         transform: translate3d(0, 0, 50px);
         box-shadow: rgba(5, 71, 17, 0.2) -5px 20px 10px 0px;
+      }
+
+      .glass .title {
+        transform: translate3d(0, 0, 30px);
+        text-shadow: -10px 30px 10px rgba(5, 71, 17, 0.5);
       }
 
       .logo {
@@ -197,12 +191,33 @@ body {
       transition: all 0.5s ease-in-out;
 
       .title {
+        margin-left: 12px;
+        transition:
+          transform ease-in-out 0.6s,
+          text-shadow ease-in-out 0.6s;
+        text-shadow: 2px 2px 4px rgba(5, 71, 17, 0.5);
         color: #fff;
         position: absolute;
         top: 20px;
         left: 10px;
         font-family: 'Anton';
         font-size: 50px;
+      }
+
+      #intro {
+        position: absolute;
+        padding: 0 30px;
+        top: 120px;
+        color: #5aa274;
+        // text-shadow: 1px 1px 2px rgba(5, 71, 17, 0.5);
+
+        .mail {
+          text-decoration-style: dashed;
+          text-decoration-line: underline;
+          text-underline-offset: 3px;
+          font-family: AaSong;
+          cursor: pointer;
+        }
       }
     }
 
@@ -228,7 +243,7 @@ body {
       }
 
       .circle2 {
-        width: 140px;
+        width: 150px;
         transform: translate3d(0, 0, 40px);
         top: 10px;
         right: 10px;
@@ -238,26 +253,26 @@ body {
       }
 
       .circle3 {
-        width: 110px;
+        width: 120px;
         transform: translate3d(0, 0, 60px);
-        top: 17px;
-        right: 17px;
+        top: 20px;
+        right: 20px;
         transition-delay: 0.8s;
       }
 
       .circle4 {
-        width: 80px;
+        width: 90px;
         transform: translate3d(0, 0, 80px);
-        top: 23px;
-        right: 23px;
+        top: 30px;
+        right: 30px;
         transition-delay: 1.2s;
       }
 
       .circle5 {
-        width: 50px;
+        width: 65px;
         transform: translate3d(0, 0, 100px);
-        top: 30px;
-        right: 30px;
+        top: 40px;
+        right: 40px;
         display: grid;
         place-content: center;
         transition-delay: 1.6s;
@@ -287,11 +302,11 @@ body {
         gap: 10px;
         transform-style: preserve-3d;
 
-        .social-button {
+        button {
           width: 30px;
           aspect-ratio: 1;
           padding: 5px;
-          background: rgb(255, 255, 255);
+          background-color: #fff;
           border-radius: 50%;
           border: none;
           display: grid;
@@ -299,7 +314,7 @@ body {
           box-shadow: rgba(5, 71, 17, 0.5) 0px 7px 5px -5px;
 
           &:hover {
-            background: black;
+            background-color: #000;
 
             .svg {
               fill: white;
@@ -318,23 +333,44 @@ body {
             transition:
               transform 0.2s ease-in-out 0.4s,
               box-shadow 0.2s ease-in-out 0.4s;
+
+            .svg {
+              width: 20px;
+            }
           }
 
           &:nth-child(2) {
             transition:
               transform 0.2s ease-in-out 0.6s,
               box-shadow 0.2s ease-in-out 0.6s;
+
+            .svg {
+              width: 14px;
+            }
           }
 
           &:nth-child(3) {
             transition:
               transform 0.2s ease-in-out 0.8s,
               box-shadow 0.2s ease-in-out 0.8s;
+
+            .svg {
+              width: 16px;
+            }
+          }
+
+          &:nth-child(4) {
+            transition:
+              transform 0.2s ease-in-out 1s,
+              box-shadow 0.2s ease-in-out 1s;
+
+            .svg {
+              width: 18px;
+            }
           }
 
           .svg {
-            width: 15px;
-            fill: #00894d;
+            transition: fill ease 0.5s;
           }
         }
       }

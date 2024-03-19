@@ -6,7 +6,11 @@
 
 @font-face {
   font-family: 'Anton';
-  src: url('../public/Anton-Regular.ttf');
+  src: url('./public/Anton-Regular.ttf');
+}
+@font-face {
+  font-family: 'AaSong';
+  src: url('./public/AaGuDianKeBenSong-2.ttf');
 }
 @keyframes earthRotate {
   0% {
@@ -25,6 +29,43 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+body .content {
+  padding: 20px;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  background-color: rgba(65, 65, 65, 0.308);
+  border: 1px solid rgba(255, 255, 255, 0.089);
+  position: relative;
+  overflow: hidden;
+}
+body .content::before {
+  content: '';
+  width: 280px;
+  height: 280px;
+  position: absolute;
+  left: -10px;
+  top: -10px;
+  z-index: -1;
+  background-color: rgba(106, 210, 125, 0.3);
+  box-shadow: 0 0 80px 80px rgba(106, 210, 125, 0.3);
+  border-radius: 50%;
+  transition: all ease-in-out 1s;
+}
+body .content::after {
+  content: '';
+  width: 140px;
+  height: 140px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  z-index: -1;
+  background-color: rgba(106, 210, 125, 0.2);
+  box-shadow: 0 0 80px 80px rgba(106, 210, 125, 0.2);
+  border-radius: 50%;
+  transition: all 1s;
 }
 body .background {
   position: fixed;
@@ -47,67 +88,6 @@ body .background {
     150px 0px 38px rgba(0, 0, 0, 0.6666666667) inset;
   opacity: 0.5;
 }
-body .content {
-  width: 90vw;
-  height: 90vh;
-  border-radius: 10px;
-  backdrop-filter: blur(10px);
-  background-color: rgba(65, 65, 65, 0.308);
-  border: 1px solid rgba(255, 255, 255, 0.089);
-  position: relative;
-  overflow: hidden;
-}
-body .content::before {
-  content: '';
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  left: 100px;
-  top: 50px;
-  z-index: -1;
-  background-color: rgba(106, 210, 125, 0.4);
-  box-shadow: 0 0 80px 80px rgba(106, 210, 125, 0.4);
-  border-radius: 50%;
-  transition: all 1s;
-}
-body .content:hover::before {
-  transform: translate(-50px, 50px);
-}
-body .content .main {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: fit-content;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  color: #fff;
-}
-body .content .main .line-flex {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-family: 'Anton';
-  font-size: 30px;
-}
-body .content .main .line-flex .avatar {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-}
-body .content .main .links span:nth-child(odd) {
-  text-decoration-style: dashed;
-  text-decoration-line: underline;
-  text-underline-offset: 3px;
-  transition: all ease 0.2s;
-  cursor: pointer;
-}
-body .content .main .links span:nth-child(odd):hover {
-  color: #646cff;
-}
 
 .info_card {
   position: absolute;
@@ -115,7 +95,7 @@ body .content .main .links span:nth-child(odd):hover {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 450px;
-  height: 180px;
+  height: 450px;
   perspective: 1000px;
 }
 .info_card:hover .card {
@@ -124,9 +104,13 @@ body .content .main .links span:nth-child(odd):hover {
     rgba(5, 71, 17, 0.3) 30px 50px 25px -40px,
     rgba(5, 71, 17, 0.1) 0px 25px 30px 0px;
 }
-.info_card:hover .card .bottom .social-buttons-container .social-button {
+.info_card:hover .card .bottom .social-buttons-container button {
   transform: translate3d(0, 0, 50px);
   box-shadow: rgba(5, 71, 17, 0.2) -5px 20px 10px 0px;
+}
+.info_card:hover .card .glass .title {
+  transform: translate3d(0, 0, 30px);
+  text-shadow: -10px 30px 10px rgba(5, 71, 17, 0.5);
 }
 .info_card:hover .card .logo .circle2 {
   transform: translate3d(0, 0, 60px);
@@ -171,12 +155,30 @@ body .content .main .links span:nth-child(odd):hover {
   transition: all 0.5s ease-in-out;
 }
 .info_card .card .glass .title {
+  margin-left: 12px;
+  transition:
+    transform ease-in-out 0.6s,
+    text-shadow ease-in-out 0.6s;
+  text-shadow: 2px 2px 4px rgba(5, 71, 17, 0.5);
   color: #fff;
   position: absolute;
   top: 20px;
   left: 10px;
   font-family: 'Anton';
   font-size: 50px;
+}
+.info_card .card .glass #intro {
+  position: absolute;
+  padding: 0 30px;
+  top: 120px;
+  color: #5aa274;
+}
+.info_card .card .glass #intro .mail {
+  text-decoration-style: dashed;
+  text-decoration-line: underline;
+  text-underline-offset: 3px;
+  font-family: AaSong;
+  cursor: pointer;
 }
 .info_card .card .logo {
   position: absolute;
@@ -199,7 +201,7 @@ body .content .main .links span:nth-child(odd):hover {
   transition: all 0.5s ease-in-out;
 }
 .info_card .card .logo .circle2 {
-  width: 140px;
+  width: 150px;
   transform: translate3d(0, 0, 40px);
   top: 10px;
   right: 10px;
@@ -208,24 +210,24 @@ body .content .main .links span:nth-child(odd):hover {
   transition-delay: 0.4s;
 }
 .info_card .card .logo .circle3 {
-  width: 110px;
+  width: 120px;
   transform: translate3d(0, 0, 60px);
-  top: 17px;
-  right: 17px;
+  top: 20px;
+  right: 20px;
   transition-delay: 0.8s;
 }
 .info_card .card .logo .circle4 {
-  width: 80px;
+  width: 90px;
   transform: translate3d(0, 0, 80px);
-  top: 23px;
-  right: 23px;
+  top: 30px;
+  right: 30px;
   transition-delay: 1.2s;
 }
 .info_card .card .logo .circle5 {
-  width: 50px;
+  width: 65px;
   transform: translate3d(0, 0, 100px);
-  top: 30px;
-  right: 30px;
+  top: 40px;
+  right: 40px;
   display: grid;
   place-content: center;
   transition-delay: 1.6s;
@@ -252,47 +254,63 @@ body .content .main .links span:nth-child(odd):hover {
   gap: 10px;
   transform-style: preserve-3d;
 }
-.info_card .card .bottom .social-buttons-container .social-button {
+.info_card .card .bottom .social-buttons-container button {
   width: 30px;
   aspect-ratio: 1;
   padding: 5px;
-  background: rgb(255, 255, 255);
+  background-color: #fff;
   border-radius: 50%;
   border: none;
   display: grid;
   place-content: center;
   box-shadow: rgba(5, 71, 17, 0.5) 0px 7px 5px -5px;
 }
-.info_card .card .bottom .social-buttons-container .social-button:hover {
-  background: black;
+.info_card .card .bottom .social-buttons-container button:hover {
+  background-color: #000;
 }
-.info_card .card .bottom .social-buttons-container .social-button:hover .svg {
+.info_card .card .bottom .social-buttons-container button:hover .svg {
   fill: white;
 }
-.info_card .card .bottom .social-buttons-container .social-button:active {
+.info_card .card .bottom .social-buttons-container button:active {
   background: rgb(255, 234, 0);
 }
-.info_card .card .bottom .social-buttons-container .social-button:active .svg {
+.info_card .card .bottom .social-buttons-container button:active .svg {
   fill: black;
 }
-.info_card .card .bottom .social-buttons-container .social-button:first-child {
+.info_card .card .bottom .social-buttons-container button:first-child {
   transition:
     transform 0.2s ease-in-out 0.4s,
     box-shadow 0.2s ease-in-out 0.4s;
 }
-.info_card .card .bottom .social-buttons-container .social-button:nth-child(2) {
+.info_card .card .bottom .social-buttons-container button:first-child .svg {
+  width: 20px;
+}
+.info_card .card .bottom .social-buttons-container button:nth-child(2) {
   transition:
     transform 0.2s ease-in-out 0.6s,
     box-shadow 0.2s ease-in-out 0.6s;
 }
-.info_card .card .bottom .social-buttons-container .social-button:nth-child(3) {
+.info_card .card .bottom .social-buttons-container button:nth-child(2) .svg {
+  width: 14px;
+}
+.info_card .card .bottom .social-buttons-container button:nth-child(3) {
   transition:
     transform 0.2s ease-in-out 0.8s,
     box-shadow 0.2s ease-in-out 0.8s;
 }
-.info_card .card .bottom .social-buttons-container .social-button .svg {
-  width: 15px;
-  fill: #00894d;
+.info_card .card .bottom .social-buttons-container button:nth-child(3) .svg {
+  width: 16px;
+}
+.info_card .card .bottom .social-buttons-container button:nth-child(4) {
+  transition:
+    transform 0.2s ease-in-out 1s,
+    box-shadow 0.2s ease-in-out 1s;
+}
+.info_card .card .bottom .social-buttons-container button:nth-child(4) .svg {
+  width: 18px;
+}
+.info_card .card .bottom .social-buttons-container button .svg {
+  transition: fill ease 0.5s;
 }
 
 /*# sourceMappingURL=styles.css.map */
