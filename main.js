@@ -11,4 +11,18 @@
 
   const link_youtube = document.getElementById('link_four')
   link_youtube.onclick = () => window.open('https://www.youtube.com/@HuberyYang', '_blank')
+
+  // copy mail
+  const mail = document.getElementById('mail')
+  const text = mail.textContent
+  mail.onclick = async () => {
+    try {
+      await navigator.clipboard.writeText(text)
+      //
+    }
+    catch (err) {
+      throw new Error('copy mail error')
+    }
+    //
+  }
 })()

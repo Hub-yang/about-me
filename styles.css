@@ -95,7 +95,7 @@ body .background {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 450px;
-  height: 450px;
+  height: 400px;
   perspective: 1000px;
 }
 .info_card:hover .card {
@@ -162,7 +162,7 @@ body .background {
   text-shadow: 2px 2px 4px rgba(5, 71, 17, 0.5);
   color: #fff;
   position: absolute;
-  top: 20px;
+  top: 30px;
   left: 10px;
   font-family: 'Anton';
   font-size: 50px;
@@ -170,8 +170,14 @@ body .background {
 .info_card .card .glass #intro {
   position: absolute;
   padding: 0 30px;
-  top: 120px;
+  top: 130px;
   color: #5aa274;
+}
+.info_card .card .glass #intro div {
+  margin-bottom: 6px;
+}
+.info_card .card .glass #intro div:first-child {
+  margin-bottom: 25px;
 }
 .info_card .card .glass #intro .mail {
   text-decoration-style: dashed;
