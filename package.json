@@ -14,12 +14,12 @@
     "build": "bin/bin.js"
   },
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prepare": "husky",
-    "commitlint": "commitlint --edit"
+    "commitlint": "commitlint --edit",
+    "sass": "sass --watch styles.scss:styles.css",
+    "build": "npx build"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.8.2",

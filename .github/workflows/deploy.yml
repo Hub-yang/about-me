@@ -1,0 +1,42 @@
+on:
+  push:
+    branches:
+      - main # 触发分支
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code # 检查存储库的操作
+        uses: actions/checkout@v4
+
+      - name: Build # 安装依赖，打包
+        run: |
+          npx pnpm run build
+
+      - name: Compressed file # 压缩.output目录下文件和目录
+        run: |
+          tar -czf dist.tar.gz -C .dist .
+
+      - name: Copy file via ssh password # 连接服务器并将压缩包拷贝至指定目录
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          port: 22
+          source: dist.tar.gz
+          target: /www/wwwroot/AboutMe
+
+      - name: SSH into server and execute commands # 连接服务器并在服务器执行操作
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          port: 22
+          script: |
+            cd /www/wwwroot/AboutMe/
+            rm -rf public/ server/ nitro.json
+            tar -xzf dist.tar.gz
+            rm dist.tar.gz
