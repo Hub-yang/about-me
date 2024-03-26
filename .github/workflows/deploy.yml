@@ -17,7 +17,7 @@ jobs:
 
       - name: Compressed file # 压缩.output目录下文件和目录
         run: |
-          tar -czf dist.tar.gz -C .dist .
+          tar -czf dist.tar.gz -C dist .
 
       - name: Copy file via ssh password # 连接服务器并将压缩包拷贝至指定目录
         uses: appleboy/scp-action@v0.1.7
