@@ -1,3 +1,4 @@
+let timer
 (() => {
   // links
   const link_github = document.getElementById('link_one')
@@ -15,14 +16,20 @@
   // copy mail
   const mail = document.getElementById('mail')
   const text = mail.textContent
+
   mail.onclick = async () => {
     try {
       await navigator.clipboard.writeText(text)
-      //
+      const tootip = document.getElementById('tootip')
+      tootip.style.top = '10px'
+      tootip.textContent = '拷贝成功'
+      clearTimeout(timer)
+      timer = setTimeout(() => {
+        tootip.style.top = '-50px'
+      }, 2000)
     }
     catch (err) {
       throw new Error('copy mail error')
     }
-    //
   }
 })()

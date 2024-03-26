@@ -34,38 +34,25 @@ body .content {
   padding: 20px;
   width: 100vw;
   height: 100vh;
-  border-radius: 10px;
   backdrop-filter: blur(10px);
   background-color: rgba(65, 65, 65, 0.308);
-  border: 1px solid rgba(255, 255, 255, 0.089);
+  background-image: linear-gradient(
+    to right top,
+    #d16ba5,
+    #c777b9,
+    #ba83ca,
+    #aa8fd8,
+    #9a9ae1,
+    #8aa7ec,
+    #79b3f4,
+    #69bff8,
+    #52cffe,
+    #41dfff,
+    #46eefa,
+    #5ffbf1
+  );
   position: relative;
   overflow: hidden;
-}
-body .content::before {
-  content: '';
-  width: 280px;
-  height: 280px;
-  position: absolute;
-  left: -10px;
-  top: -10px;
-  z-index: -1;
-  background-color: rgba(106, 210, 125, 0.3);
-  box-shadow: 0 0 80px 80px rgba(106, 210, 125, 0.3);
-  border-radius: 50%;
-  transition: all ease-in-out 1s;
-}
-body .content::after {
-  content: '';
-  width: 140px;
-  height: 140px;
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  z-index: -1;
-  background-color: rgba(106, 210, 125, 0.2);
-  box-shadow: 0 0 80px 80px rgba(106, 210, 125, 0.2);
-  border-radius: 50%;
-  transition: all 1s;
 }
 body .background {
   position: fixed;
@@ -317,6 +304,24 @@ body .background {
 }
 .info_card .card .bottom .social-buttons-container button .svg {
   transition: fill ease 0.5s;
+}
+
+#tootip {
+  transition: all ease 0.5s;
+  position: fixed;
+  width: 100px;
+  height: 40px;
+  top: -50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  margin: 0 auto;
+  background-color: #000;
+  border-radius: 10px;
+  border: 2px solid #5aa274;
+  color: #fff;
+  font-size: 14px;
 }
 
 /*# sourceMappingURL=styles.css.map */
