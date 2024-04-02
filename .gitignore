@@ -24,3 +24,6 @@ styles.css.map
 *.njsproj
 *.sln
 *.sw?
+
+styles.scss
+styles.css.map

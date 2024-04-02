@@ -43,21 +43,19 @@ body {
     background-color: rgba(65, 65, 65, 0.308);
     position: relative;
     overflow: hidden;
-    background-image: linear-gradient(
-      to right top,
-      #d16ba5,
-      #c777b9,
-      #ba83ca,
-      #aa8fd8,
-      #9a9ae1,
-      #8aa7ec,
-      #79b3f4,
-      #69bff8,
-      #52cffe,
-      #41dfff,
-      #46eefa,
-      #5ffbf1
-    );
+    background-image: linear-gradient(to right top,
+        #d16ba5,
+        #c777b9,
+        #ba83ca,
+        #aa8fd8,
+        #9a9ae1,
+        #8aa7ec,
+        #79b3f4,
+        #69bff8,
+        #52cffe,
+        #41dfff,
+        #46eefa,
+        #5ffbf1);
 
     // &::before {
     //   content: '';
@@ -162,11 +160,9 @@ body {
   .card {
     height: 100%;
     border-radius: 50px;
-    background: linear-gradient(
-      135deg,
-      rgb(0, 255, 214) 0%,
-      rgb(8, 226, 96) 100%
-    );
+    background: linear-gradient(135deg,
+        rgb(0, 255, 214) 0%,
+        rgb(8, 226, 96) 100%);
     transition: all 0.5s ease-in-out;
     transform-style: preserve-3d;
     box-shadow:
@@ -179,11 +175,9 @@ body {
       inset: 8px;
       border-radius: 55px;
       border-top-right-radius: 100%;
-      background: linear-gradient(
-        0deg,
-        rgba(255, 255, 255, 0.349) 0%,
-        rgba(255, 255, 255, 0.815) 100%
-      );
+      background: linear-gradient(0deg,
+          rgba(255, 255, 255, 0.349) 0%,
+          rgba(255, 255, 255, 0.815) 100%);
       transform: translate3d(0px, 0px, 25px);
       border-left: 1px solid white;
       border-bottom: 1px solid white;
@@ -311,6 +305,7 @@ body {
 
         button {
           width: 30px;
+          cursor: pointer;
           aspect-ratio: 1;
           padding: 5px;
           background-color: #fff;
