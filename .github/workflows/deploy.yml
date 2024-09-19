@@ -27,7 +27,7 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           port: 22
           source: dist.tar.gz
-          target: /www/wwwroot/AboutMe
+          target: /www/wwwroot/about-me
 
       - name: SSH into server and execute commands # 连接服务器并在服务器执行操作
         uses: appleboy/ssh-action@master
@@ -37,7 +37,7 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           port: 22
           script: |
-            cd /www/wwwroot/AboutMe/
+            cd /www/wwwroot/about-me/
             rm -rf public/ server/ nitro.json
             tar -xzf dist.tar.gz
             rm dist.tar.gz
