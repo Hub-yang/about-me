@@ -38,6 +38,6 @@ jobs:
           port: 22
           script: |
             cd /www/wwwroot/about-me/
-            rm -rf public/ server/ nitro.json
+            find . -mindepth 1 ! -name 'dist.tar.gz' -exec rm -rf {} +
             tar -xzf dist.tar.gz
             rm dist.tar.gz
