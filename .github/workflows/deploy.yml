@@ -38,6 +38,6 @@ jobs:
           port: 22
           script: |
             cd /www/wwwroot/about-me/
-            rm -rf rm -rf ./*
+            rm -rf public/ server/ nitro.json
             tar -xzf dist.tar.gz
             rm dist.tar.gz
