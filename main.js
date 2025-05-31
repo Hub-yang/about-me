@@ -1,17 +1,35 @@
 let timer
 (() => {
   // links
-  const link_github = document.getElementById('link_one')
-  link_github.onclick = () => window.open('https://github.com/Hub-yang', '_blank')
+  const linkMap = [
+    {
+      id: 'link_one',
+      url: 'https://github.com/Hub-yang',
+    },
+    {
+      id: 'link_two',
+      url: 'https://twitter.com/mochenghualei',
+    },
+    {
+      id: 'link_three',
+      url: 'https://space.bilibili.com/278851804',
+    },
+    {
+      id: 'link_four',
+      url: 'https://www.youtube.com/@HuberyYang',
+    },
+  ]
 
-  const link_twitter = document.getElementById('link_two')
-  link_twitter.onclick = () => window.open('https://twitter.com/mochenghualei', '_blank')
+  linkMap.forEach(({ id, url }) => {
+    const linkEl = document.getElementById(id)
+    linkEl.onclick = () => window.open(url, '_blank')
+  })
 
-  const link_bilibili = document.getElementById('link_three')
-  link_bilibili.onclick = () => window.open('https://space.bilibili.com/278851804', '_blank')
-
-  const link_youtube = document.getElementById('link_four')
-  link_youtube.onclick = () => window.open('https://www.youtube.com/@HuberyYang', '_blank')
+  // navigater
+  const nav_react = document.getElementById('link_react')
+  nav_react.onclick = () => window.open('https://huberyyang.site/', '_self')
+  const nav_vue = document.getElementById('link_vue')
+  nav_vue.onclick = () => window.open('https://huberyyang.site:85/', '_self')
 
   // copy mail
   const copy = document.querySelectorAll('.mail')
@@ -29,7 +47,7 @@ let timer
         }, 2000)
       }
       catch (err) {
-        throw new Error('copy mail error')
+        throw new Error(`${err}`)
       }
     }
   })

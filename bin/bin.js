@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 'use strict'
 
-import process from 'node:process'
-import { resolve } from 'node:path'
 import fs from 'node:fs'
+import { resolve } from 'node:path'
+import process from 'node:process'
 import AdmZip from 'adm-zip'
 // import { exec } from 'node:child_process'
 

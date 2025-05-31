@@ -1,8 +1,8 @@
 {
   "name": "about-me",
   "type": "module",
-  "version": "0.0.1",
-  "packageManager": "pnpm@9.0.5",
+  "version": "1.0.0",
+  "packageManager": "pnpm@10.11.0",
   "description": "About me.",
   "author": "Hubery Yang",
   "license": "MIT",
@@ -18,25 +18,22 @@
     "lint:fix": "eslint . --fix",
     "prepare": "husky",
     "commitlint": "commitlint --edit",
-    "sass": "sass --watch styles.scss:styles.css",
-    "build": "npx build"
+    "scss": "sass styles.scss styles.css",
+    "scss:watch": "sass --watch styles.scss:styles.css",
+    "build": "npx build",
+    "dev": "http-server . -o"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.8.2",
-    "@commitlint/cli": "^19.2.0",
-    "@commitlint/config-conventional": "^19.1.0",
-    "adm-zip": "^0.5.12",
-    "eslint": "^8.57.0",
-    "eslint-plugin-format": "^0.1.0",
-    "husky": "^9.0.11",
-    "lint-staged": "^15.2.2",
+    "@antfu/eslint-config": "^4.13.2",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "adm-zip": "^0.5.16",
+    "eslint": "^9.28.0",
+    "eslint-plugin-format": "^1.0.1",
+    "http-server": "^14.1.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.0",
     "sass": "^1.72.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint --edit $1"
-    }
   },
   "lint-staged": {
     "*": "eslint . --fix"

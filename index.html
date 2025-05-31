@@ -10,6 +10,20 @@
   <body>
     <!-- tootip -->
     <div id="tootip"></div>
+    <!-- navigater -->
+    <div class="navigater_container">
+      <span>Build with</span>
+      <span class="active">
+        <span>Html</span>
+        <span class="line"></span>
+      </span>
+      <span class="react item" id="link_react">
+        <span>React</span>
+      </span>
+      <span class="vue item" id="link_vue">
+        <span>Vue</span>
+      </span>
+    </div>
     <!-- main contant -->
     <div class="content">
       <div class="info_card">
@@ -18,8 +32,8 @@
             <div class="title">Hubery Yang</div>
             <div id="intro">
               <div>👋 Hi, 我是 "Hubery Yang"</div>
-              <div>👨‍💻 前端开发者 | Vue & Nuxt & Js & Python</div>
-              <div>🚀 脚本编写, 网站开发</div>
+              <div>👨‍💻 前端开发者 | Vue & Nuxt & React & Python</div>
+              <div>🚀 脚本编写, 网页设计</div>
               <div>💓 拍摄 | 剪辑 | 阅读 | 羽毛球</div>
               <div class="connection">与我联系</div>
               <div>📧 [<span class="mail">18830279823@163.com</span>]</div>
@@ -39,44 +53,28 @@
           <div class="bottom">
             <div class="social-buttons-container">
               <button id="link_one">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="svg"
-                  viewBox="0 0 24 24"
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" class="svg" viewBox="0 0 24 24">
                   <path
                     d="M12.001 2c-5.525 0-10 4.475-10 10a9.994 9.994 0 0 0 6.837 9.488c.5.087.688-.213.688-.476c0-.237-.013-1.024-.013-1.862c-2.512.463-3.162-.612-3.362-1.175c-.113-.288-.6-1.175-1.025-1.413c-.35-.187-.85-.65-.013-.662c.788-.013 1.35.725 1.538 1.025c.9 1.512 2.337 1.087 2.912.825c.088-.65.35-1.087.638-1.337c-2.225-.25-4.55-1.113-4.55-4.938c0-1.088.387-1.987 1.025-2.687c-.1-.25-.45-1.275.1-2.65c0 0 .837-.263 2.75 1.024a9.28 9.28 0 0 1 2.5-.337c.85 0 1.7.112 2.5.337c1.913-1.3 2.75-1.024 2.75-1.024c.55 1.375.2 2.4.1 2.65c.637.7 1.025 1.587 1.025 2.687c0 3.838-2.337 4.688-4.562 4.938c.362.312.675.912.675 1.85c0 1.337-.013 2.412-.013 2.75c0 .262.188.574.688.474A10.016 10.016 0 0 0 22 12c0-5.525-4.475-10-10-10"
                   />
                 </svg>
               </button>
               <button id="link_two">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="svg"
-                  viewBox="0 0 24 24"
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" class="svg" viewBox="0 0 24 24">
                   <path
                     d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"
                   />
                 </svg>
               </button>
               <button id="link_three">
-                <svg
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="svg"
-                >
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="svg">
                   <path
                     d="M7.172 2.757L10.414 6h3.171l3.243-3.242a1 1 0 1 1 1.415 1.415L16.414 6H18.5A3.5 3.5 0 0 1 22 9.5v8a3.5 3.5 0 0 1-3.5 3.5h-13A3.5 3.5 0 0 1 2 17.5v-8A3.5 3.5 0 0 1 5.5 6h2.085L5.757 4.171a1 1 0 0 1 1.415-1.415M18.5 8h-13a1.5 1.5 0 0 0-1.493 1.356L4 9.5v8a1.5 1.5 0 0 0 1.356 1.493L5.5 19h13a1.5 1.5 0 0 0 1.493-1.355L20 17.5v-8A1.5 1.5 0 0 0 18.5 8M8 11a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0v-2a1 1 0 0 1 1-1m8 0a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0v-2a1 1 0 0 1 1-1"
                   />
                 </svg>
               </button>
               <button id="link_four">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="svg"
-                  viewBox="0 0 24 24"
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" class="svg" viewBox="0 0 24 24">
                   <path
                     d="M19.607 6.995c-.076-.298-.292-.523-.539-.592C18.63 6.28 16.501 6 12.001 6s-6.628.28-7.069.403c-.244.068-.46.293-.537.592c-.109.424-.394 2.2-.394 5.005c0 2.804.285 4.58.394 5.006c.076.297.292.522.538.59C5.373 17.72 7.5 18 12 18s6.629-.28 7.069-.403c.244-.068.46-.293.537-.592c.11-.424.394-2.205.394-5.005s-.285-4.58-.394-5.005m1.937-.497C22 8.28 22 12 22 12s0 3.72-.457 5.502c-.254.985-.997 1.76-1.938 2.022C17.897 20 12 20 12 20s-5.893 0-7.605-.476c-.945-.266-1.687-1.04-1.938-2.022C2 15.72 2 12 2 12s0-3.72.457-5.502c.254-.985.997-1.76 1.938-2.022C6.108 4 12.001 4 12.001 4s5.896 0 7.605.476c.944.266 1.687 1.04 1.938 2.022M10.001 15.5v-7l6 3.5z"
                   />
@@ -89,14 +87,9 @@
     </div>
 
     <div class="footer">
-      <a href="https://beian.miit.gov.cn/" target="_blank"
-        >京ICP备2023013429号-2</a
-      >
+      <a href="https://beian.miit.gov.cn/" target="_blank">京ICP备2023013429号-2</a>
       &nbsp;
-      <a
-        href="https://beian.mps.gov.cn/#/query/webSearch?code=11011402054026"
-        rel="noreferrer"
-        target="_blank"
+      <a href="https://beian.mps.gov.cn/#/query/webSearch?code=11011402054026" rel="noreferrer" target="_blank"
         >京公网安备11011402054026</a
       >
     </div>
