@@ -15,6 +15,7 @@ export default {
       'revert',
       'update',
       'chore',
+      'release',
     ]],
   },
 }
