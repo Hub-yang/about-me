@@ -342,7 +342,7 @@ body .background {
   font-size: 18px;
 }
 .navigater_container .item {
-  color: #fff;
+  color: black;
   margin-left: 12px;
   transition: color ease 0.3s;
   cursor: pointer;
