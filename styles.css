@@ -153,11 +153,11 @@ body .background {
   top: 130px;
   color: #5aa274;
 }
-.info_card .card .glass #intro div {
-  margin-bottom: 6px;
-}
 .info_card .card .glass #intro div:first-child {
   margin-bottom: 25px;
+}
+.info_card .card .glass #intro div {
+  margin-bottom: 6px;
 }
 .info_card .card .glass #intro .mail {
   text-decoration-style: dashed;
@@ -310,25 +310,6 @@ body .background {
   border-radius: 6px;
   color: #fff;
   font-size: 14px;
-}
-
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-}
-.footer a {
-  text-decoration: none;
-  color: #5aa274;
-  text-decoration-style: dashed;
-  text-decoration-line: underline;
-  text-underline-offset: 3px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: color ease 1s;
-}
-.footer a:hover {
-  color: #fff;
 }
 
 .navigater_container {

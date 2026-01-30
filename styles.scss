@@ -398,27 +398,6 @@ body {
   font-size: 14px;
 }
 
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-
-  a {
-    text-decoration: none;
-    color: #5aa274;
-    text-decoration-style: dashed;
-    text-decoration-line: underline;
-    text-underline-offset: 3px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: color ease 1s;
-
-    &:hover {
-      color: #fff;
-    }
-  }
-}
-
 .navigater_container {
   position: absolute;
   top: 10px;
@@ -435,10 +414,12 @@ body {
     transition: color ease 0.3s;
     cursor: pointer;
   }
+
   .vue:hover {
     transition: color ease 0.3s;
     color: $vue-color;
   }
+
   .react:hover {
     transition: color ease 0.3s;
     color: $react-color;
@@ -472,7 +453,7 @@ body {
     color: $html-color;
     background: white;
   }
-  
+
   .active:hover .line {
     transition: width ease 0.3s;
     width: 50px;
