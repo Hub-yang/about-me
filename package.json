@@ -1,8 +1,8 @@
 {
   "name": "about-me",
   "type": "module",
-  "version": "1.0.1",
-  "packageManager": "pnpm@10.11.0",
+  "version": "1.0.0-beta1",
+  "packageManager": "pnpm@10.28.2",
   "description": "About me.",
   "author": "Hubery Yang",
   "license": "MIT",
@@ -14,26 +14,29 @@
     "build": "bin/bin.js"
   },
   "scripts": {
+    "dev": "http-server . -o",
+    "build": "npx build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "prepare": "husky",
-    "commitlint": "commitlint --edit",
     "scss": "sass styles.scss styles.css",
     "scss:watch": "sass --watch styles.scss:styles.css",
-    "build": "npx build",
-    "dev": "http-server . -o"
+    "prepare": "husky",
+    "commitlint": "commitlint --edit",
+    "taze": "npx taze major -r",
+    "license:mit": "npx license MIT",
+    "release": "npx bumpp"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.13.2",
-    "@commitlint/cli": "^19.8.1",
-    "@commitlint/config-conventional": "^19.8.1",
+    "@antfu/eslint-config": "^7.2.0",
+    "@commitlint/cli": "^20.3.1",
+    "@commitlint/config-conventional": "^20.3.1",
     "adm-zip": "^0.5.16",
-    "eslint": "^9.28.0",
-    "eslint-plugin-format": "^1.0.1",
+    "eslint": "^9.39.2",
+    "eslint-plugin-format": "^1.3.1",
     "http-server": "^14.1.1",
     "husky": "^9.1.7",
-    "lint-staged": "^16.1.0",
-    "sass": "^1.72.0"
+    "lint-staged": "^16.2.7",
+    "sass": "^1.97.3"
   },
   "lint-staged": {
     "*": "eslint . --fix"
