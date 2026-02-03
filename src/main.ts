@@ -1,4 +1,4 @@
-import './styles.scss'
+import './main.scss'
 
 interface Links {
   id: string
