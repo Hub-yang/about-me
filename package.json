@@ -15,8 +15,6 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "scss": "sass styles.scss styles.css",
-    "scss:watch": "sass --watch styles.scss:styles.css",
     "prepare": "husky",
     "commitlint": "commitlint --edit",
     "taze": "npx taze major -r",
