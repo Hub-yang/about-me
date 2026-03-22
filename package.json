@@ -7,7 +7,7 @@
   "author": "Hubery Yang",
   "license": "MIT",
   "keywords": [
-    "personalsite"
+    "personalSite"
   ],
   "scripts": {
     "dev": "vite",
